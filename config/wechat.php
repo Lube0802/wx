@@ -10,16 +10,15 @@ return [
     /**
      * 账号基本信息，请从微信公众平台/开放平台获取
      */
-    'app_id'  => 'wx4b86de063179211a',         // AppID wx9ec1119f1a067a16
-    'secret'  => '0c324dff567345fd32b616619b522396',     // AppSecret 03b430e12eaefcd2f07687c942b00ad2
-    /**
+    'app_id'  => 'wx91cfe6f91573a977',         // AppID wx9ec1119f1a067a16
+    'secret'  => '59bfd8f7e02b7fe6fa08d3a3c8bf8c79',     // AppSecret 03b430e12eaefcd2f07687c942b00ad2
     'token'   => '3e1aeb8c9016499d8201b7d149d8b04a',          // Token
-    'aes_key' => 'pcQluRUzp12O93k486JU6Dst2K9UBI4L7Mb9czvW20k',          // EncodingAESKey，安全模式下请一定要填写！！！
+    'aes_key' => 'xESddOZWt9V23imeG1jo8pxPR3rJz1X7IPIz3OE6lrf',          // EncodingAESKey，安全模式下请一定要填写！！！
 
     'key'       => '5f6r8s4c9u7k2j4h5g6i8q7m6s45a2f2',
     'mch_id'    => '1293748701',
     'notify_url'=> '/pay/notify',
-
+    /**
     'twocode_back_url'=> '/login/weixin-info',
     'open_appid'     => 'wx82a6b4d84b1bd10d',
     'open_appsecret' => '5b89c1486e341958c60ffd78a35dfaf4',
@@ -44,8 +43,8 @@ return [
      * callback：OAuth授权完成后的回调页地址
      */
     'oauth' => [
-//        'scopes'   => ['snsapi_userinfo']
-        'scopes'   => ['snsapi_base'],
+        'scopes'   => ['snsapi_userinfo']
+//        'scopes'   => ['snsapi_base'],
         'callback' => 'http://e.beta.ping99.com/api/login-callback',
     ],
     /**
@@ -73,7 +72,7 @@ return [
     ],
     //限制IP
     "allow_ip"=>[
-        '10.1.59.*'
+
     ],
     /**
     //缺省的消息反馈
