@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Lib\AuthUser;
-use App\Models\WechatModel;
+use App\Models\Member;
 use EasyWeChat\Foundation\Application;
 use Helper;
 use Illuminate\Support\Facades\Input;
@@ -83,7 +83,7 @@ class WxTestController extends BaseController
                 $return_url = '/';
             }
             // 根据openid从数据库查询详细用户信息
-            $user_data = WechatModel::loginByOpenId($data['openid']);
+            $user_data = Member::loginByOpenId($data['openid']);
             // 判断用户信息是否存在
             if (!$user_data) {
                 // 将用户openid保存到session

@@ -15,7 +15,10 @@ class Authenticate
     private $helper;
 
     private $whiteList = [
-
+        'api/login',
+        'api/login-callback',
+        'api/login-redirect',
+        'api/debug',
     ];
 
     /**
