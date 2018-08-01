@@ -10,8 +10,9 @@ class WechatController extends BaseController
     public function index()
     {
         $app = new Application(config('wechat'));
-        $app->server->push(function($message) {
-            return '欢迎关注 overtrue';
+        $server = $app->server;
+        $server->setMessageHandler(function ($message) {
+            return 'welcome';
         });
         return $app->server->serve();
     }
