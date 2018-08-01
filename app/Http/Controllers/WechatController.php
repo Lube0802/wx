@@ -9,7 +9,7 @@ class WechatController extends BaseController
 {
     public function index()
     {
-        $app = new Application(config('wechat'));
-        return $app->server->serve();
+//        $app = new Application(config('wechat'));
+//        return $app->server->serve();
     }
 }
