@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<style>
+    html,body,div.img-container{
+        width: 100%;
+        height: 100%;
+
+    }
+    div.img-container{
+        background-image: url('/imgs/wx/waiting.jpg');
+        background-size: 100% 100%;
+    }
+</style>
+<body>
+<div class='img-container'>
+
+
+</div>
+</body>
+</html>
+<script>
+    var code = "{{$code}}";
+    var state = "{{$state}}";
+    window.onload = function(){
+        setTimeout(function(){
+            ajax({
+                url: "/api/login-redirect",       //请求地址
+                type: "GET",                            //请求方式
+                data: { code: code, state: state },    //请求参数
+                dataType: "json",
+                success: function (response, xml) {
+                    // 此处放成功后执行的代码
+                    var res =   JSON.parse(response);
+                    location.href=res.data.url;
+
+                },
+                error: function (status) {
+                    // 此处放失败后执行的代码
+                    delCookie('PHPSESSID');
+                    delCookie('login');
+                    location.href="/api/login";
+                }
+            });
+
+        },2000)
+
+    }
+
+
+
+    function ajax(options) {
+        options = options || {};
+        options.type = (options.type || "GET").toUpperCase();
+        options.dataType = options.dataType || "json";
+        var params = formatParams(options.data);
+        var xhr;
+
+        //创建 - 第一步
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else if(window.ActiveObject) {         //IE6及以下
+            xhr = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+
+        //连接 和 发送 - 第二步
+        if (options.type == "GET") {
+            xhr.open("GET", options.url + "?" + params, true);
+            xhr.send(null);
+        } else if (options.type == "POST") {
+            xhr.open("POST", options.url, true);
+            //设置表单提交时的内容类型
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send(params);
+        }
+
+        //接收 - 第三步
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                var status = xhr.status;
+                if (status == 200) {
+                    options.success && options.success(xhr.responseText, xhr.responseXML);
+                } else{
+                    options.error && options.error(status);
+                }
+            }
+        }
+    }
+
+    //格式化参数
+    function formatParams(data) {
+        var arr = [];
+        for (var name in data) {
+            arr.push(encodeURIComponent(name) + "=" + encodeURIComponent(data[name]));
+        }
+        arr.push(("v=" + Math.random()).replace("."));
+        return arr.join("&");
+    }
+
+
+    // 删除cookie
+    function delCookie(name){
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval=getCookie(name);
+        if(cval!=null)
+            document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+    }
+
+    //  删除cookie
+</script>
