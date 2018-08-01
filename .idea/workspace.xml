@@ -25,8 +25,8 @@
       <file leaf-file-name="WxTestController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WxTestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.413794">
-              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state vertical-scroll-proportion="-13.793103">
+              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
@@ -67,7 +67,7 @@
       <file leaf-file-name="wechat.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/wechat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6756757">
+            <state vertical-scroll-proportion="1.045045">
               <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
               <folding />
             </state>
@@ -136,13 +136,13 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
         <option value="$PROJECT_DIR$/app/Models/WechatModel.php" />
         <option value="$PROJECT_DIR$/app/Models/Member.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WxTestController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/routes/AuthRoute.php" />
         <option value="$PROJECT_DIR$/routes/NoAuthRoute.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WechatController.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/RefreshAccessToken.php" />
         <option value="$PROJECT_DIR$/config/wechat.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WxTestController.php" />
       </list>
     </option>
   </component>
@@ -378,7 +378,7 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="Z:/xiaofupai.com" />
+    <property name="last_opened_file_path" value="Z:/shareart.io" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://Z:/test/app/Providers/AuthServiceProvider.php" />
   </component>
   <component name="RecentsManager">
@@ -864,8 +864,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WxTestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.413794">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        <state vertical-scroll-proportion="-13.793103">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
           <folding>
             <element signature="e#40#61#0#PHP" expanded="true" />
           </folding>
@@ -874,7 +874,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/wechat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6756757">
+        <state vertical-scroll-proportion="1.045045">
           <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
           <folding />
         </state>

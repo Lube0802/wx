@@ -13,26 +13,21 @@ class WxTestController extends BaseController
 {
     public function login()
     {
-        // 接收参数return_url
-        $return_url = Input::get('return_url');
-        // 判断return_url是否存在
-        // 如果return_url不存在但$_SERVER中有$_SERVER['HTTP_REFERER']，则取$_SERVER['HTTP_REFERER']
-        // 如果return_url不存在且$_SERVER中没有$_SERVER['HTTP_REFERER']，则判断session中是否有return_url，有则取，没有则$return_url = '/'
+        $return_url = trim(Input::get('return_url'));
         if (!$return_url && array_key_exists('HTTP_REFERER', $_SERVER)) {
             $return_url = $_SERVER['HTTP_REFERER'];
         } elseif (!$return_url && !array_key_exists('HTTP_REFERER', $_SERVER)) {
             $return_url = AuthUser::take('return_url') ? AuthUser::take('return_url') : '/';
         }
-        // 判断是否登录，若已登录，则直接跳回$return_url，若未登录，则获取微信授权
-        if (!AuthUser::check()) {
-            // 保存$return_url到session，授权处理成功后跳转使用
+
+        if (!AuthUser::check()) { // 未登录
             AuthUser::add('return_url', $return_url);
             $app = new Application(config('wechat'));
             $oauth = $app->oauth;
             return $oauth->redirect();
         } else {
             if (!$return_url) {
-                $return_url = "/";
+                $return_url = '/';
             }
             AuthUser::del('return_url');
             return redirect($return_url);
