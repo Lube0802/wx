@@ -46,7 +46,7 @@ return [
     'oauth' => [
         'scopes'   => ['snsapi_userinfo'],
 //        'scopes'   => ['snsapi_base'],
-        'callback' => 'http://e.beta.ping99.com/api/login-callback',
+        'callback' => 'http://wx.lubetown.xin/api/login-callback',
     ],
     /**
      * 微信支付
