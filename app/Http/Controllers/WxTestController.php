@@ -71,6 +71,9 @@ class WxTestController extends BaseController
             // 拼接详细信息
             $data = [
                 'openid' => $wechat_info->getId(),
+//                'name' => $wechat_info['original']['nickname'],
+//                'unionId' => $wechat_info['original']['unionid'],
+//                'thumb' => $wechat_info['original']['headimgurl'],
             ];
             // 从session中获取return_url，用于授权成功后跳转
             $return_url = AuthUser::take('return_url');
