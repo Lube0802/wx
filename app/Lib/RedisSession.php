@@ -43,6 +43,7 @@ class RedisSession implements \SessionHandlerInterface
     public function destroy($session_id)
     {
         $this->redis->del('session:'.$session_id);
+        return true;
     }
 
     /**
